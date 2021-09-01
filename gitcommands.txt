@@ -33,6 +33,7 @@ git push origin master -> to push the changes to git here master is a branch
 
 
 
+
 Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git
 $ git init
 Initialized empty Git repository in G:/Programs/git/.git/
