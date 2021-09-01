@@ -1,0 +1,240 @@
+git init -> creates new git repository
+ls -> list files and folders
+ls -a -> -a for show all hidden files
+touch filename.extension -> creates a file
+git status -> to check whether the file is stagged or not 
+git add filename -> stages a particular file 
+git add . -> stages all the files residents in current repository
+git rm -r --cached . -> unstage all the files in current repository
+git rm --cached filename -> unstage a particular file
+git commit -> captures a snapshot of program currently staged changes
+git commit -m "any message" -> -m for msg 
+vi filename.ext -> to edit also after editing press esc and type :qw to save and exit
+cat file.ext -> to view file
+git restore --staged file.ext -> to restore the staged file
+git log -> to get history 
+git reset #id of commit
+-> if you remove some commit than you can not directly delete it because each commit is build on top of each other you can unstage commit
+git stash -> temporarily stashesh the changes you have made
+git stash pop -> to call the stashed changes
+git stash clear -> to clear the stashed changesgit remote add origin url-of-your-repository -> to add your project origin means in your account called origin
+
+
+get remote -v -> shows all the url is atteched to this folder
+
+git push origin master -> to push the changes to git here master is a branch
+
+
+
+
+
+
+
+
+
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git
+$ git init
+Initialized empty Git repository in G:/Programs/git/.git/
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ ls
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ ls -a
+./  ../  .git/
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ ls .git
+HEAD  config  description  hooks/  info/  objects/  refs/
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ touch names.txt
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        names.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git add .
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git rm --cached .
+fatal: not removing '.' recursively without -r
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git rm -r --cached .
+rm 'names.txt'
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        names.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git add names.txt
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git stauts
+git: 'stauts' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git commit -m "names.txt file added"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Ganguly Yadav@Mr_Yadav.(none)')
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git config --global user.email "yadavganguly77@gmail.com"
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git config --global user.name "Ganguly Yadav"
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git commit -m "names.txt file added"
+[master (root-commit) f52bed6] names.txt file added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 names.txt
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ vi names.txt
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ car names.txt
+bash: car: command not found
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ cat names.txt
+Ganguly Yadav
+Krushna Tale
+CodeBuddies_
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git add .
+warning: LF will be replaced by CRLF in names.txt.
+The file will have its original line endings in your working directory
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git restore --staged names.txt
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git add .
+warning: LF will be replaced by CRLF in names.txt.
+The file will have its original line endings in your working directory
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git commit -m "names.txt modified successfully"
+[master 919c989] names.txt modified successfully
+ 1 file changed, 3 insertions(+)
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git log
+commit 919c98907b700f70b1845241f42650c57200e5ec (HEAD -> master)
+Author: Ganguly Yadav <yadavganguly77@gmail.com>
+Date:   Wed Sep 1 10:21:14 2021 +0530
+
+    names.txt modified successfully
+
+commit f52bed61b30748b33ee538a4a8d1a8d937759697
+Author: Ganguly Yadav <yadavganguly77@gmail.com>
+Date:   Wed Sep 1 09:56:49 2021 +0530
+
+    names.txt file added
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ rm -rf names.txt
+
+Ganguly Yadav@Mr_Yadav MINGW64 /g/Programs/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Gan
